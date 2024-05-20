@@ -31,7 +31,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
       <!-- Sidebar -->
-      {{> sidebar}}
+      {{> sidebar pageCode=pageCode}}
       <!-- End of Sidebar -->
 
       <!-- Content Wrapper -->
@@ -78,5 +78,13 @@
     <!-- Page level custom scripts -->
     <script src="/js/demo/chart-area-demo.js"></script>
     <script src="/js/demo/chart-pie-demo.js"></script>
+    <script>
+        $(function() {
+        $('#fileInput').on("change", (event) => {
+          const file = event.target.files[0]; 
+          $('#books-image-preview').attr("src", URL.createObjectURL(file))
+        })
+      })
+    </script>
   </body>
 </html>

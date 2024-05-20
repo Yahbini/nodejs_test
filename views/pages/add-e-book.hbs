@@ -2,8 +2,12 @@
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">
-      
-      Add new E-book</h1>
+      {{#if (eq isEditing true)}}
+        Update book
+      {{else}}
+        Add new E-book
+      {{/if}}
+      </h1>
   </div>
 
   <!-- Page Content -->
@@ -16,7 +20,7 @@
           {{#if (eq isEditing true)}}
             /add-e-books/{{books._id}}
           {{else}}
-            /add-e-books
+            /add-e-book
           {{/if}}"
           method="post"
           style="max-width: 500px; margin: auto"
@@ -96,21 +100,24 @@
           <div class="form-group">
             <label class="form-label"> E-book image </label>
             <br />
-            <input hidden type="file" id="e-book-img" name="imgsUrl" />
+            <input hidden type="file" id="books-image-preview" name="imgsUrl" />
             <button
-              type="button"
+              type="file"
               class="btn btn-sm btn-info"
-              onclick="document.getElementById('e-book-img').click();"
+              onclick="document.getElementById('fileInput').click();"
             >
               Choose image
             </button>
             <img
-              src="#"
+              id = "books-image-preview"
+              src=""
               class="img-fluid"
               alt="E-book image"
-              style="width: 200px; height: 200px"
+              style="width: 100px; height: 100px"
             />
+            
           </div>
+          
 
           <div class="row">
             <button
