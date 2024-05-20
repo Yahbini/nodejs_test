@@ -1,1 +1,1 @@
-export const MONGO_URL = "";
+export const MONGO_URL = "mongodb+srv://phoebe:admin123@cluster0.w3ed0oz.mongodb.net/ebook-management?retryWrites=true&w=majority&appName=Cluster0=ebook-management&authMechanism=SCRAM-SHA-1";
